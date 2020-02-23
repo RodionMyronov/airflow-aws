@@ -29,8 +29,7 @@ ENV AIRFLOW_HOME /usr/airflow
 
 RUN pip install apache-airflow[postgres,celery,redis,ldap,kerberos]==1.10.9
 
-COPY ./airflow/airflow.cfg ./
-COPY ./airflow/start-services.sh ./
+COPY ./airflow/* ./
 
 RUN /etc/init.d/postgresql start &&\
 	airflow initdb &&\
