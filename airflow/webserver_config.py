@@ -15,4 +15,4 @@ AUTH_LDAP_BIND_PASSWORD = 'lL*^dcOP(:7e7u6'
 AUTH_LDAP_UID_FIELD = 'sAMAccountName'
 AUTH_LDAP_USE_TLS = False
 AUTH_LDAP_ALLOW_SELF_SIGNED = True
-AUTH_LDAP_TLS_CACERTFILE = '/usr/airflow/ca_name.pem’
+AUTH_LDAP_TLS_CACERTFILE = '/usr/airflow/ca_name.pem'

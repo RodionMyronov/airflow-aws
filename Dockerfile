@@ -14,11 +14,11 @@ RUN apt-get install gcc -y
 
 
 
-USER postgres
+#USER postgres
 
-RUN /etc/init.d/postgresql start &&\
-    psql --command "CREATE USER airflow WITH SUPERUSER PASSWORD 'airflow';" &&\
-    createdb -O airflow airflow
+#RUN /etc/init.d/postgresql start &&\
+#    psql --command "CREATE USER airflow WITH SUPERUSER PASSWORD 'airflow';" &&\
+#    createdb -O airflow airflow
 
 USER root
 
@@ -31,9 +31,9 @@ RUN pip install apache-airflow[postgres,celery,redis,ldap,kerberos]==1.10.9
 
 COPY ./airflow/* ./
 
-RUN /etc/init.d/postgresql start &&\
-	airflow initdb &&\
-	airflow create_user --username airflow --role Admin --email airflow@mydomain.com --firstname airflow --lastname admin --password airflow
+#RUN /etc/init.d/postgresql start &&\
+#	airflow initdb &&\
+#	airflow create_user --username airflow --role Admin --email airflow@mydomain.com --firstname airflow --lastname admin --password airflow
 
 RUN mkdir /usr/airflow/dags
 
